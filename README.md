@@ -16,3 +16,4 @@ Various Greasemonkey/Tampermonkey user scripts
 
 Transforms commit dates from relative dates to full date strings.
 
+![commit dates](img/commit_dates.png)
