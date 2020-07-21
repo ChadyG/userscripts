@@ -16,7 +16,17 @@
         var d = new Date(Date.parse(this.title))
         this.textContent = d.toDateString()
     };
+    
+    //FIXME: Needs to run after Bitbucket's lazy load
+    waitForKeyElements("[data-qa=commit-list-container]"), formatCommitList);
 
-    $('#commit-list-container').find('time').each(formatDate);
-    $('#commit-list-container').find('time').on('DOMSubtreeModified', formatDate);
+    function formatCommitList() {
+        //KSI
+        $('#commit-list-container').find('time').each(formatDate);
+        $('#commit-list-container').find('time').on('DOMSubtreeModified', formatDate);
+        
+        //SCG
+        $('[data-qa=commit-list-container]').find('span[title]').each(formatDate);
+        $('[data-qa=commit-list-container]').find('span[title]').on('DOMSubtreeModified', formatDate);
+    }
 })();
