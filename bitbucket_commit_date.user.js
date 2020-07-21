@@ -19,6 +19,7 @@
     
     //FIXME: Needs to run after Bitbucket's lazy load
     waitForKeyElements("[data-qa=commit-list-container]"), formatCommitList);
+    setTimeout(formatCommitList, 5000);
 
     function formatCommitList() {
         //KSI
