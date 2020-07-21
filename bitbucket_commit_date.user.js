@@ -14,7 +14,11 @@
     // Your code here...
     function formatDate(elem) {
         var d = new Date(Date.parse(this.title))
-        this.textContent = d.toDateString()
+        var year = d.toLocaleDateString('en-US', {year: 'numeric'})
+        var month = d.toLocaleDateString('en-US', {month: '2-digit'})
+        var day = d.toLocaleDateString('en-US', {day: '2-digit'})
+        
+        this.textContent = `${year}-${month}-${day}`
     };
     
     //FIXME: Needs to run after Bitbucket's lazy load
