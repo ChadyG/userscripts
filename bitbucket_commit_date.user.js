@@ -6,6 +6,8 @@
 // @author       ChadyG
 // @match        https://bitbucket.org/*
 // @grant        none
+// @require http://code.jquery.com/jquery-3.4.1.min.js
+// @require https://greasyfork.org/scripts/5392-waitforkeyelements/code/WaitForKeyElements.js?version=115012
 // ==/UserScript==
 
 (function() {
@@ -22,7 +24,7 @@
     };
     
     //FIXME: Needs to run after Bitbucket's lazy load
-    waitForKeyElements("[data-qa=commit-list-container]"), formatCommitList);
+    waitForKeyElements("[data-qa=commit-list-container]", formatCommitList);
     setTimeout(formatCommitList, 5000);
 
     function formatCommitList() {
