@@ -28,11 +28,11 @@
     setTimeout(formatCommitList, 5000);
 
     function formatCommitList() {
-        //KSI
+        //Older style
         $('#commit-list-container').find('time').each(formatDate);
         $('#commit-list-container').find('time').on('DOMSubtreeModified', formatDate);
         
-        //SCG
+        //Newer
         $('[data-qa=commit-list-container]').find('span[title]').each(formatDate);
         $('[data-qa=commit-list-container]').find('span[title]').on('DOMSubtreeModified', formatDate);
     }
